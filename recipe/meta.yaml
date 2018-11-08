@@ -1,0 +1,36 @@
+{% set name = "dem2mesh" %}
+{% set version = "master" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://github.com/OpenDroneMap/dem2mesh/archive/{{ version }}.tar.gz
+  sha256: 2459d724d3028d87d0b2f53394bce95ba6f33371b5dcdd20a3ea9b73a15aa54f
+
+build:
+    number: 0
+
+requirements:
+  build:
+    # - {{ compiler("c") }}
+    # - {{ compiler("cxx") }}
+    - cmake
+    - ninja
+  host:
+    - libgdal {{ libgdal }}
+
+test:
+  commands:
+    - test -f $PREFIX/bin/dem2mesh
+
+about:
+  home: https://github.com/OpenDroneMap/dem2mesh
+  license: GPL 3
+  summary: Quickly generate 2.5D meshes from elevation models.
+
+extra:
+  recipe-maintainers:
+    - v-turin
