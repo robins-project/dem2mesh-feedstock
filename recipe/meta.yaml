@@ -1,5 +1,6 @@
 {% set name = "dem2mesh" %}
 {% set version = "master" %}
+{% set commit = "1de2f3dfc6e8966b176fc198f4e21183b59951c5" %}
 
 package:
   name: {{ name }}
@@ -7,8 +8,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/OpenDroneMap/dem2mesh/archive/{{ version }}.tar.gz
-  sha256: 2459d724d3028d87d0b2f53394bce95ba6f33371b5dcdd20a3ea9b73a15aa54f
+  url: https://github.com/OpenDroneMap/dem2mesh/archive/{{ commit }}.tar.gz
+  sha256: fcc1645927adf473a7dced7153b10eaf7dd9f1c623d2d7dc5f34d0cf05979e21
 
 build:
     number: 0
